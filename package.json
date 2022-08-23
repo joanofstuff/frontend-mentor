@@ -1,5 +1,10 @@
 {
   "name": "frontend-mentor",
+  "author": {
+    "name": "Joan Martins",
+    "email": "joanofstuff@duck.com",
+    "url": "https://github.com/joanofstuff"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +24,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "sass": "^1.54.5",
     "typescript": "4.7.4"
   }
 }
