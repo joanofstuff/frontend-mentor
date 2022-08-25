@@ -17,7 +17,9 @@ const ProductCardPage: NextPage<Props> = ({}) => {
 					href="/product-preview-card-component/favicon-32x32.png"
 				/>
 			</Head>
-			<ProductCard />
+			<main>
+				<ProductCard />
+			</main>
 			<style global jsx>{`
 				body {
 					background: ${styles.backgroundColor};
