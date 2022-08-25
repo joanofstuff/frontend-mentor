@@ -16,10 +16,10 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["src/common/components*"],
-			// "@hooks/*": ["src/common/hooks*"],
-			// "@contexts/*": ["src/common/contexts*"],
-			// "@utils/*": ["src/common/utils/*"],
+			"@components/*": ["src/common/components/*"],
+			"@lib/*": ["src/common/lib/*"],
+			// "@hooks/*": ["src/common/hooks/*"],
+			// "@contexts/*": ["src/common/contexts/*"],
 			"@styles/*": ["./styles/*"],
 			"src/*": ["./src/*"],
 			"~/*": ["./*"]

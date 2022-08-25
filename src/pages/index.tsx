@@ -1,14 +1,40 @@
-import type { NextPage } from 'next';
+import { getAllProjects } from '@lib/pages';
+import type { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async (): Promise<
+	GetStaticPropsResult<Props>
+> => {
+	return {
+		props: {
+			pages: await getAllProjects(),
+		},
+	};
+};
+
+type Props = {
+	pages: string[];
+};
+
+const Home: NextPage<Props> = ({ pages }) => {
 	return (
 		<>
 			<Head>
 				<title>joanofstuff | Frontend Mentor</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main></main>
+			<main>
+				<ul>
+					{pages.map((path) => (
+						<li key={path}>
+							<Link href={path}>
+								<a>{path}</a>
+							</Link>
+						</li>
+					))}
+				</ul>
+			</main>
 		</>
 	);
 };
