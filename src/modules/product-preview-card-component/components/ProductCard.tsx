@@ -1,27 +1,16 @@
 import styles from '@styles/ProductCard.module.scss';
-import Image, { StaticImageData } from 'next/image';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import useResponsiveImage from 'src/common/hooks/useResponsiveImage';
 import icon from '~/public/product-preview-card-component/icon-cart.svg';
 import imageDesktop from '~/public/product-preview-card-component/image-product-desktop.jpg';
 import imageMobile from '~/public/product-preview-card-component/image-product-mobile.jpg';
 
 const ProductCard = () => {
-	const [image, setImage] = useState<StaticImageData>(imageMobile);
-
-	useEffect(() => {
-		const handleResize = () => {
-			if (image === imageDesktop && window.innerWidth < 600)
-				setImage(imageMobile);
-			else if (image === imageMobile && window.innerWidth >= 600)
-				setImage(imageDesktop);
-		};
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, [image]);
+	const image = useResponsiveImage(
+		imageDesktop,
+		imageMobile,
+		parseInt(styles.threshold.replace('px', '')),
+	);
 
 	return (
 		<div className={styles.card}>

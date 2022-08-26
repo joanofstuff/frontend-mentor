@@ -8,16 +8,18 @@ $dark-blue: hsl(212, 21%, 14%);
 $dark-gray-blue: hsl(228, 12%, 48%);
 $white: hsl(0, 0%, 100%);
 
+$width: 600px;
 $card-margin: 20px;
 $border-radius: 8px;
 :export {
 	backgroundColor: $cream;
+	threshold: $width;
 }
 
 .card {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	max-width: 600px;
+	max-width: $width;
 	margin: $card-margin;
 	border-radius: $border-radius;
 	background-color: $white;
@@ -95,7 +97,7 @@ $border-radius: 8px;
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: $width) {
 	.card {
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto;
